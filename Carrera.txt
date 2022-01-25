@@ -1,0 +1,61 @@
+/*
+* 	Hacer una clase en lenguaje Java con la siguiente estructura.
+    	Carrera
+	//ATRIBUTOS
+    	- nombre, cadena
+   	- abreviatura, cadena
+   	- numAlumnos, entero
+ 	//METODOS
+    	+ Carrera()
+    	+ Carrera(cadena, cadena, entero)
+    	+ Carrera(Carrera)
+    	+ capturar()
+    	+ imprimir()
+
+Soto Tirado 5-3
+ */
+ */
+package corte_2;
+
+import java.util.Scanner;
+
+public class Carrera {
+        private String nombre;
+        private String abreviatura;
+        private int numAlumnos;
+       
+        public Carrera(){
+            this.nombre ="";
+            this.abreviatura="";
+            this.numAlumnos=0;    
+        }   
+    
+        public Carrera(String nombre,String abreviatura,int numAlumnos){//PARAMETROS
+            this.nombre = nombre;
+            this.abreviatura = abreviatura;
+            this.numAlumnos = numAlumnos;
+        }
+
+        public Carrera(Carrera car){//COPIA
+            this.nombre = car.nombre;
+            this.abreviatura = car.abreviatura;
+            this.numAlumnos = car.numAlumnos;
+        }
+        
+        public void capturar(){
+            Scanner buffer = new Scanner (System.in);
+            System.out.println("Ingrese el nombre de la carrera: ");
+            this.nombre = buffer.nextLine();
+            System.out.println("Ingrese la abreviatura de la carrera: ");
+            this.abreviatura = buffer.nextLine();
+            System.out.println("Ingrese el numero de alumnos: ");
+            this.numAlumnos = buffer.nextInt(); buffer.nextLine();
+        }
+
+        public void imprimir(){
+            System.out.println("Nombre: "+this.nombre);
+            System.out.println("Abreviatura de la carrera: "+this.abreviatura);
+            System.out.println("Numero de Alumnos: "+this.numAlumnos);
+            System.out.println("\n");
+        } 
+}
